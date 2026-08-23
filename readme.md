@@ -159,25 +159,25 @@ Report section  → full structured report with download button
 
 ```
 "What is my highest expense category?"
-→ calculate_totals() → pandas groupby → Food & Groceries ₹144,897 ✅
+→ calculate_totals() → pandas groupby → Food & Groceries ₹144,897 
 
 "What did I spend in December 2025?"
-→ calculate_totals(month="Dec-2025") → exact category breakdown ✅
+→ calculate_totals(month="Dec-2025") → exact category breakdown 
 
 "What is my lowest expense month?"
-→ get_summary() → finds minimum in monthly table → Dec 2025 ✅
+→ get_summary() → finds minimum in monthly table → Dec 2025 
 
 "Flag my high value transactions"
-→ check_high_spends() → pandas filter > ₹5000 → 13 transactions listed ✅
+→ check_high_spends() → pandas filter > ₹5000 → 13 transactions listed 
 
 "How much did I spend via UPI?"
-→ get_payment_breakdown() → UPI: ₹215,024 (43.9%) ✅
+→ get_payment_breakdown() → UPI: ₹215,024 (43.9%) 
 
 "Generate full report"
-→ all tools run together → 5 section structured report → downloadable ✅
+→ all tools run together → 5 section structured report → downloadable 
 
 "Who won IPL 2024?"
-→ tool: none → guardrail fires → politely redirected ✅
+→ tool: none → guardrail fires → politely redirected 
 ```
 
 ---
