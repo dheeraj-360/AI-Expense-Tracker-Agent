@@ -1,4 +1,4 @@
-# 💰 AI Expense Tracker Agent
+# AI Expense Tracker Agent
 
 
 ---
