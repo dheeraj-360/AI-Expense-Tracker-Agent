@@ -269,7 +269,7 @@ Built as Assignment 1 of the CodeBasics AI Agents curriculum:
 | Agentic loop | `run_agent()` — full ReAct pipeline |
 | Structured output from LLM | `generate_report()` — 5 section markdown report |
 | Tool definition and invocation | TOOLS registry + run_tool() |
-| Guardrails | Off-topic questions redirected politely |
+| Guardrails | Off-topic questions redirected |
 
 **Built beyond the assignment:**
 - Streamlit web UI with chat interface
