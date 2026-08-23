@@ -38,12 +38,12 @@ def tool_get_payment_breakdown() -> str:
 TOOLS = {
     "get_summary": {
         "function": tool_get_summary,
-        "description": "Get complete overview of all expense data — totals, category summary, monthly summary. Use for general overview questions.",
+        "description": "Get complete overview of all expense data. Use for questions about: overall totals, highest spending month, lowest spending month, monthly comparisons, payment mode breakdown, top transactions, general spending patterns.",
         "args": {}
     },
     "calculate_totals": {
         "function": tool_calculate_totals,
-        "description": "Calculate spending totals by category. Can filter by specific month. Use for category breakdown or monthly analysis questions.",
+        "description": "Calculate spending totals by category. Use for ANY question about category spending — highest category, lowest category, what I spend most on, category breakdown, monthly category analysis. Can filter by specific month.",
         "args": {
             "month": "optional — like 'Jan-2026' or 'Dec-2025'"
         }

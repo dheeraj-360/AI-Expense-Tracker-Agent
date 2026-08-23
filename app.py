@@ -27,19 +27,20 @@ def get_data():
 
 
 def show_metrics(df):
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns(4)  # back to 4 columns
+
     with col1:
-        st.metric("Total spent", f"₹{df['Amount (₹)'].sum():,.0f}")
+        start = df["Date"].min().strftime("%b'%y")  # Sep'25
+        end = df["Date"].max().strftime("%b'%y")  # Apr'26
+        st.metric("Period", f"{start} → {end}")
     with col2:
-        avg = df["Amount (₹)"].sum() / df["Month"].nunique()
-        st.metric("Avg per month", f"₹{avg:,.0f}")
+        st.metric("Total spent", f"₹{df['Amount (₹)'].sum():,.0f}")
     with col3:
         top_cat = df.groupby("Category")["Amount (₹)"].sum().idxmax()
         st.metric("Top category", top_cat)
     with col4:
         top_month = df.groupby("Month")["Amount (₹)"].sum().idxmax()
         st.metric("Highest month", top_month)
-
 
 def build_sidebar(df):
     with st.sidebar:

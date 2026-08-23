@@ -8,6 +8,9 @@ from tools import TOOLS, tool_get_summary, tool_calculate_totals, tool_check_hig
 
 load_dotenv()
 
+# get the model
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+
 
 # ── Step 0: Build tool descriptions for Groq ─────────────
 def build_tool_descriptions() -> str:
@@ -41,6 +44,10 @@ RULES:
 - If no tool fits → {{"tool": "none", "args": {{}}}}
 - Available months: Sep-2025, Oct-2025, Nov-2025, Dec-2025,
                     Jan-2026, Feb-2026, Mar-2026, Apr-2026
+- If year not mentioned → ALWAYS assume: 
+  Jan, Feb, Mar, Apr → 2026
+  Sep, Oct, Nov, Dec → 2025
+  Example: "march" → "Mar-2026", "december" → "Dec-2025"
 """
 
     messages: list[ChatCompletionMessageParam] = [
@@ -49,7 +56,7 @@ RULES:
     ]
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=messages,
         temperature=0.0,
         max_tokens=100,
@@ -115,7 +122,7 @@ Explain this in plain English with one insight."""
     ]
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=messages,
         temperature=0.3,
         max_tokens=1024,
@@ -192,7 +199,7 @@ Generate the full structured expense report now."""
     ]
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=messages,
         temperature=0.3,
         max_tokens=2048,
