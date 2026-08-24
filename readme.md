@@ -295,7 +295,7 @@ No code change needed.
 - Dynamic code generation - AI generates pandas code on the fly for any question
 - Deploy on Streamlit Cloud  - public URL to share
 
-## Honest Note
+## Note
 
 This project is part of my AI agents learning journey was built through guided learning , questioning every line, understanding every why.
 
